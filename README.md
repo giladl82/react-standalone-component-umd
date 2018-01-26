@@ -51,5 +51,8 @@ The html file, is a simple file including the component script file (I've manual
     <script src="component.js" type='text/babel'></script>
     <script> Fancy.init('#root', {color:'green'}</script>
 
+**#3** A react app created using create-react-app. 
+As simple as it sounds, just link / install your component and then import it as any other component.
+
 That's it.
 Hope it will help some one
