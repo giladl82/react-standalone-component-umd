@@ -1,0 +1,8 @@
+node_modules/
+
+src/
+src/**/
+
+webpack.**.*
+
+.DS_Store
