@@ -656,7 +656,7 @@ module.exports = warning;
 
         return React.createElement(
           'div',
-          { style: style, className: 'fancy' },
+          { style: style, className: _style2.default.fancy },
           'This is so Fancy!'
         );
       }
@@ -2186,8 +2186,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -2205,10 +2205,12 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, ".fancy {\r\n  color:blue;\r\n  font-size: 25px;\r\n  text-align: center;\r\n}", ""]);
+exports.push([module.i, "._1_kXxmnXcIpPLXmyDZqxaQ {\r\n  color:blue;\r\n  font-size: 25px;\r\n  text-align: center;\r\n  border:solid 2px blue;\r\n  padding: 6px;\r\n}", ""]);
 
 // exports
-
+exports.locals = {
+	"fancy": "_1_kXxmnXcIpPLXmyDZqxaQ"
+};
 
 /***/ }),
 /* 14 */
