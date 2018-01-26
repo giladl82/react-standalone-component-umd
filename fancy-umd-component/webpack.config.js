@@ -1,5 +1,6 @@
-var path = require('path');
+const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -24,7 +25,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { modules: true, importLoaders: 1 } },
+          {loader: 'postcss-loader', options: {
+            config: {
+              path: './postcss.config.js'
+            }
+          }}
+        ]
       }
     ]
   },
@@ -32,6 +41,7 @@ module.exports = {
     'react': 'commonjs react' // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
   },
   plugins: [
+    new ExtractTextPlugin('[name].css'),
     new webpack.ProvidePlugin({
       React: "React", react: "React", "window.react": "React", "window.React": "React"
     },

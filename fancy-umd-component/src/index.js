@@ -1,5 +1,5 @@
 // import React from 'react';
-import style from './style.css'
+import css from './style.css'
 
 export class Fancy extends React.Component {
   render() {
@@ -8,7 +8,7 @@ export class Fancy extends React.Component {
     }
 
     return (
-      <div style={style} className='fancy'>This is so Fancy!</div>
+      <div style={style} className={css.fancy}>This is so Fancy!</div>
     );
   }
 }
