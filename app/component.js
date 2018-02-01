@@ -641,13 +641,27 @@ module.exports = warning;
   var Fancy = exports.Fancy = function (_React$Component) {
     _inherits(Fancy, _React$Component);
 
-    function Fancy() {
+    function Fancy(props) {
       _classCallCheck(this, Fancy);
 
-      return _possibleConstructorReturn(this, (Fancy.__proto__ || Object.getPrototypeOf(Fancy)).apply(this, arguments));
+      var _this = _possibleConstructorReturn(this, (Fancy.__proto__ || Object.getPrototypeOf(Fancy)).call(this, props));
+
+      _this.state = {
+        text: 'This is so Fancy!'
+      };
+
+      _this.refreshData = _this.refreshData.bind(_this);
+      return _this;
     }
 
     _createClass(Fancy, [{
+      key: 'refreshData',
+      value: function refreshData() {
+        this.setState({
+          text: 'Fancy and updated'
+        });
+      }
+    }, {
       key: 'render',
       value: function render() {
         var style = {
@@ -657,7 +671,7 @@ module.exports = warning;
         return React.createElement(
           'div',
           { style: style, className: _style2.default.fancy },
-          'This is so Fancy!'
+          this.state.text
         );
       }
     }]);
@@ -666,7 +680,7 @@ module.exports = warning;
   }(React.Component);
 
   var init = exports.init = function init(selector, props) {
-    ReactDOM.render(React.createElement(Fancy, props), document.querySelector(selector));
+    return ReactDOM.render(React.createElement(Fancy, props), document.querySelector(selector));
   };
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))

@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link data-require="bootstrap@4.0.5" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-  </head>
+<head>
+  <link data-require="bootstrap@4.0.5" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+  />
+</head>
 
-  <body>
-    <div class='container'>
-	  <div id='root' class='mt-3'></div>
-    </div>
+<body>
+  <div class='container'>
+    <div id='root' class='mt-3'></div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
-    
-    <script src="component.js"></script>
-    <script>
-      Fancy.init('#root', {color: 'green'});
-    </script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
+
+  <script src="component.js"></script>
+  <script>
+    let fn = Fancy.init('#root', { color: 'green' });
+    setTimeout(() => {
+      fn.setState({ text: 'state was changed' });
+    }, 2000);
+    setTimeout(() => {
+      fn.refreshData()
+    }, 4000);
+    setTimeout(() => {
+      fn = Fancy.init('#root', { color: 'blue' });
+    }, 6000);
+  </script>
+</body>
 
 </html>
