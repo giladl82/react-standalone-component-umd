@@ -16,13 +16,7 @@
 
   <script src="component.js"></script>
   <script>
-    let fn = Fancy.init('#root', { color: 'green' });
-    setTimeout(() => {
-      fn.setState({ text: 'state was changed' });
-    }, 2000);
-    setTimeout(() => {
-      fn.refreshData()
-    }, 4000);
+    let fn = Fancy.init('#root', { color: 'green' });   
     setTimeout(() => {
       fn = Fancy.init('#root', { color: 'blue' });
     }, 6000);

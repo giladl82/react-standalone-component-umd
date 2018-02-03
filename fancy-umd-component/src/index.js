@@ -1,18 +1,19 @@
 // import React from 'react';
 import css from './style.css'
 
+
 export class Fancy extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-      text: 'This is so Fancy!'
+      text: 'This is so Fancy!!!'
     }
 
     this.refreshData = this.refreshData.bind(this);
   }
 
-  refreshData () {
+  refreshData() {    
     this.setState({
       text: 'Fancy and updated'
     })
@@ -24,7 +25,11 @@ export class Fancy extends React.Component {
     }
 
     return (
-      <div style={style} className={css.fancy}>{this.state.text}</div>
+      <div style={style} className={css.fancy}>
+        {this.state.text}
+        <br />
+        <button onClick={this.refreshData}>Click to change text</button>
+      </div>
     );
   }
 }

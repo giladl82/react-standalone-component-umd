@@ -647,7 +647,7 @@ module.exports = warning;
       var _this = _possibleConstructorReturn(this, (Fancy.__proto__ || Object.getPrototypeOf(Fancy)).call(this, props));
 
       _this.state = {
-        text: 'This is so Fancy!'
+        text: 'This is so Fancy!!!'
       };
 
       _this.refreshData = _this.refreshData.bind(_this);
@@ -657,6 +657,7 @@ module.exports = warning;
     _createClass(Fancy, [{
       key: 'refreshData',
       value: function refreshData() {
+        debugger;
         this.setState({
           text: 'Fancy and updated'
         });
@@ -671,7 +672,13 @@ module.exports = warning;
         return React.createElement(
           'div',
           { style: style, className: _style2.default.fancy },
-          this.state.text
+          this.state.text,
+          React.createElement('br', null),
+          React.createElement(
+            'button',
+            { onClick: this.refreshData },
+            'Click to change text'
+          )
         );
       }
     }]);
